@@ -471,3 +471,61 @@
     padding: 40px 0;
   }
 }
+
+/* Asosiy container */
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.follow-h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* Rasmlar o'ralgan blok */
+.folow-parent {
+  display: grid;
+  /* Dastlab desktopda 6 ta rasm bir qatorda */
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.follow-div img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* --- RESPONSIVE SINDIRISH --- */
+
+/* 1. 1200px dan kichrayganda: 3 tadan 2 qator bo'ladi */
+@media (max-width: 1200px) {
+  .folow-parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2. 800px dan kichrayganda: 2 tadan 3 qator bo'ladi */
+@media (max-width: 800px) {
+  .folow-parent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+/* 3. 500px dan kichrayganda: 1 tadan hamma ketma-ket tushadi */
+@media (max-width: 500px) {
+  .folow-parent {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .follow-h1 {
+    font-size: 24px;
+  }
+}
