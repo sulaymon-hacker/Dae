@@ -529,3 +529,171 @@
     font-size: 24px;
   }
 }
+
+/* 1. UMUMIY KONTEYNER VA ASOSIY SOZLAMALAR */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 2. SHOP SETS SECTION (Rasm konteyner ichida) */
+.Shop-sets {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.Shop-sets .nav-container {
+  background-image: url("./images/your-image.jpg"); /* Rasm yo'li */
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.Sets-parent {
+  background-color: #e49e7c;
+  width: 100%;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* 3. MEETING SECTION (1150px va 1070px breakpoint) */
+.Metting-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  padding: 60px 0;
+}
+
+.img-meet img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.letter-div {
+  flex: 1;
+}
+
+/* 4. FOLLOW US SECTION (1200px da 2 qatorga sinish) */
+.folow-parent {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.follow-div img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5. FOOTER SECTION (880px da sekin sinish) */
+.footer {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.footer-parent {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.input-d {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  background: transparent;
+}
+
+.input-d::placeholder {
+  color: #b4604d;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* --- BARCHA RESPONSIVE BREAKPOINTLAR --- */
+
+/* 1200px: Follow us 2 qator (3 tadan) bo'ladi */
+@media (max-width: 1200px) {
+  .folow-parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 1150px: Meeting gap 50px bo'ladi */
+@media (max-width: 1150px) {
+  .Metting-div {
+    gap: 50px;
+  }
+}
+
+/* 1070px: Meeting flex-wrap ishlaydi */
+@media (max-width: 1070px) {
+  .Metting-div {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .img-meet,
+  .letter-div {
+    width: 100%;
+  }
+}
+
+/* 880px: Footer sekin sinadi (2 tadan bo'lib) */
+@media (max-width: 880px) {
+  .footer-parent {
+    flex-wrap: wrap;
+  }
+  .footer-child {
+    min-width: calc(50% - 20px);
+  }
+}
+
+/* 420px: INPUT VA MOBIL MUAMMOSI YECHIMI */
+@media (max-width: 420px) {
+  .Sets-parent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .folow-parent {
+    grid-template-columns: repeat(1, 1fr); /* Rasmlar bittadan */
+  }
+
+  .footer-child {
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .input-d {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  /* 420pxda subscribe ko'rinishi uchun */
+  .input-d::placeholder {
+    font-size: 12px;
+    color: #bf9b7a; /* Rangini to'q qildik */
+    text-align: center;
+  }
+}
